@@ -1,5 +1,8 @@
 #include "MainMenu.h"
+#include "ConfirmQuit.h"
 #include "Terminal.h"
+#include "Game.h"
+#include "InPlay.h"
 
 void MainMenu::Run()
 {
@@ -8,11 +11,17 @@ void MainMenu::Run()
 	{
 		Terminal::WriteLine();
 		Terminal::WriteLine("Main Menu:");
-		Terminal::WriteLine("1) Quit");
+		Terminal::WriteLine("1) Start");
+		Terminal::WriteLine("0) Quit");
 		auto input = Terminal::ReadLine();
-		if (input == "1")
+		if (input == "0")
 		{
-			done = true;
+			done = ConfirmQuit::Run();
+		}
+		else if (input == "1")
+		{
+			Game::Start();
+			InPlay::Run();
 		}
 		else
 		{
@@ -20,4 +29,6 @@ void MainMenu::Run()
 			Terminal::WriteLine("Invalid input!");
 		}
 	}
+	Terminal::WriteLine();
+	Terminal::WriteLine("Thanks for playing!");
 }
