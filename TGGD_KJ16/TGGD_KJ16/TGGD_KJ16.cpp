@@ -1,6 +1,18 @@
-#include <iostream>
+#include "Terminal.h"
+#include "Menu.h"
 
 int main()
 {
-    std::cout << "Hello, Krassjam 16!\n";
+    bool done = false;
+    while (!done)
+    {
+        Menu::Clear();
+        Menu::Add("Quit", [&done]() { done = true; });
+        Menu::Prompt(
+            []() 
+            {
+                Terminal::WriteLine();
+                Terminal::WriteLine("<TODO: Make Better Game Title>");
+            });
+    }
 }

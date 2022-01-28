@@ -7,6 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TGGD_KJ16", "TGGD_KJ16\TGGD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stuff", "Stuff", "{D339568A-BEC0-4B82-8647-1E4353A05219}"
 	ProjectSection(SolutionItems) = preProject
+		..\butler.sh = ..\butler.sh
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
