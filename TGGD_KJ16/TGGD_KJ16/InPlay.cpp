@@ -4,6 +4,7 @@
 #include <format>
 #include "ConfirmMenu.h"
 #include "TurnMenu.h"
+#include "MoveMenu.h"
 void InPlay::Run()
 {
 	while (Character::IsAlive())
@@ -11,6 +12,7 @@ void InPlay::Run()
 		Terminal::WriteLine();
 		Terminal::WriteLine(std::format("Location: ({}, {}) facing {}", Character::GetX(), Character::GetY(), (int)Character::GetFacing()));
 		Terminal::WriteLine("1) Turn");
+		Terminal::WriteLine("2) Move");
 		Terminal::WriteLine("0) Abandon Game");
 		auto input = Terminal::ReadLine();
 		if (input == "0")
@@ -20,9 +22,13 @@ void InPlay::Run()
 				return;
 			}
 		}
-		if (input == "1")
+		else if (input == "1")
 		{
 			TurnMenu::Run();
+		}
+		else if (input == "2")
+		{
+			MoveMenu::Run();
 		}
 		else
 		{

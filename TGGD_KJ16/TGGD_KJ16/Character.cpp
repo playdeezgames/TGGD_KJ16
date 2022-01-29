@@ -74,3 +74,31 @@ void Character::Turn(::Turn turn)
 		break;
 	}
 }
+
+void Character::Move(::Move move)
+{
+	auto oldFacing = characterFacing;
+	switch (move)
+	{
+	case ::Move::LEFT:
+		Turn(Turn::LEFT);
+		break;
+	case ::Move::RIGHT:
+		Turn(Turn::RIGHT);
+		break;
+	case ::Move::BACKWARD:
+		Turn(Turn::AROUND);
+		break;
+	}
+	int deltaX =
+		(characterFacing == Direction::EAST) ? (1) :
+		(characterFacing == Direction::WEST) ? (-1) :
+		(0);
+	int deltaY =
+		(characterFacing == Direction::SOUTH) ? (1) :
+		(characterFacing == Direction::NORTH) ? (-1) :
+		(0);
+	characterFacing = oldFacing;
+	characterX += deltaX;
+	characterY += deltaY;
+}

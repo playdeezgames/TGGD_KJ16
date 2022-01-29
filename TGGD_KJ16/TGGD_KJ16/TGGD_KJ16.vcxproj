@@ -149,6 +149,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="InPlay.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="MoveMenu.cpp" />
     <ClCompile Include="Terminal.cpp" />
     <ClCompile Include="TGGD_KJ16.cpp" />
     <ClCompile Include="TurnMenu.cpp" />
@@ -160,6 +161,8 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="InPlay.h" />
+    <ClInclude Include="Move.h" />
+    <ClInclude Include="MoveMenu.h" />
     <ClInclude Include="Terminal.h" />
     <ClInclude Include="Turn.h" />
     <ClInclude Include="TurnMenu.h" />
