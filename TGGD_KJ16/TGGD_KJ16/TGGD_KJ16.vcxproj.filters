@@ -44,6 +44,9 @@
     <ClCompile Include="School.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Prophesies.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Terminal.h">
@@ -83,6 +86,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RNG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Prophesies.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

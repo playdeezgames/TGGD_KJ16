@@ -6,14 +6,20 @@
 #include "TurnMenu.h"
 #include "MoveMenu.h"
 #include "School.h"
+#include "Prophesies.h"
 void InPlay::Run()
 {
 	while (Character::IsAlive())
 	{
 		Terminal::WriteLine();
+		auto prophesyIndex = Prophesies::GetProphesy(Character::GetX(), Character::GetY());
 		if (School::IsInside(Character::GetX(), Character::GetY()))
 		{
 			Terminal::WriteLine("You are inside the school.");
+			if (prophesyIndex && !Prophesies::IsFulfilled(*prophesyIndex))
+			{
+				Terminal::WriteLine("There is an unfulfilled prophesy here.");
+			}
 		}
 		else
 		{

@@ -4,13 +4,13 @@
 static int schoolX;
 static int schoolY;
 
-static constexpr int SCHOOL_WIDTH = 8;
-static constexpr int SCHOOL_HEIGHT = 8;
+static constexpr int SCHOOL_WIDTH = 6;
+static constexpr int SCHOOL_HEIGHT = 6;
 
 void School::Start()
 {
-	schoolX = RNG::FromRange(-16, 16);
-	schoolY = RNG::FromRange(-16, 16);
+	schoolX = RNG::FromRange(-12, 12);
+	schoolY = RNG::FromRange(-12, 12);
 }
 
 int School::GetMinimumX()

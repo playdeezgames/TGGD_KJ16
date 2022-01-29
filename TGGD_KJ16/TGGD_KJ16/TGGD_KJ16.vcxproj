@@ -152,6 +152,7 @@
     <ClCompile Include="MoveMenu.cpp" />
     <ClCompile Include="RNG.cpp" />
     <ClCompile Include="School.cpp" />
+    <ClCompile Include="Prophesies.cpp" />
     <ClCompile Include="Terminal.cpp" />
     <ClCompile Include="TGGD_KJ16.cpp" />
     <ClCompile Include="TurnMenu.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="InPlay.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="MoveMenu.h" />
+    <ClInclude Include="Prophesies.h" />
     <ClInclude Include="RNG.h" />
     <ClInclude Include="School.h" />
     <ClInclude Include="Terminal.h" />

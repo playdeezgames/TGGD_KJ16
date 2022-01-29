@@ -26,8 +26,8 @@ void Character::Start()
 	}
 	do
 	{
-		characterX = RNG::FromRange(-16, 16);
-		characterY = RNG::FromRange(-16, 16);
+		characterX = RNG::FromRange(-12, 12);
+		characterY = RNG::FromRange(-12, 12);
 	} while (School::IsInside(characterX, characterY));
 
 }
