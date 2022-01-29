@@ -1,5 +1,7 @@
 #include "Character.h"
 #include "Direction.h"
+#include "School.h"
+#include "RNG.h"
 
 static Direction characterFacing{};
 static int characterX{};
@@ -7,9 +9,27 @@ static int characterY{};
 
 void Character::Start()
 {
-	characterFacing = Direction::NORTH;
-	characterX = 0;
-	characterY = 0;
+	switch (RNG::FromRange(1, 5))
+	{
+	case 1:
+		characterFacing = Direction::NORTH;
+		break;
+	case 2:
+		characterFacing = Direction::EAST;
+		break;
+	case 3:
+		characterFacing = Direction::SOUTH;
+		break;
+	case 4:
+		characterFacing = Direction::WEST;
+		break;
+	}
+	do
+	{
+		characterX = RNG::FromRange(-16, 16);
+		characterY = RNG::FromRange(-16, 16);
+	} while (School::IsInside(characterX, characterY));
+
 }
 
 int Character::GetX()
