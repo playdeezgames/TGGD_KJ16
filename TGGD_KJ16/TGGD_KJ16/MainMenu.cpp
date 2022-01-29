@@ -10,6 +10,8 @@ void MainMenu::Run()
 	while (!done)
 	{
 		Terminal::WriteLine();
+		Terminal::WriteLine("The Spider Slaying and Prophesy Fulfilling Chosen One of SPLORR!!");
+		Terminal::WriteLine();
 		Terminal::WriteLine("Main Menu:");
 		Terminal::WriteLine("1) Start");
 		Terminal::WriteLine("0) Quit");
