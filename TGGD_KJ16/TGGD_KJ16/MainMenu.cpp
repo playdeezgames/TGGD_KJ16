@@ -1,5 +1,5 @@
 #include "MainMenu.h"
-#include "ConfirmQuit.h"
+#include "ConfirmMenu.h"
 #include "Terminal.h"
 #include "Game.h"
 #include "InPlay.h"
@@ -16,7 +16,7 @@ void MainMenu::Run()
 		auto input = Terminal::ReadLine();
 		if (input == "0")
 		{
-			done = ConfirmQuit::Run();
+			done = ConfirmMenu::Run("Are you sure you want to quit?");
 		}
 		else if (input == "1")
 		{

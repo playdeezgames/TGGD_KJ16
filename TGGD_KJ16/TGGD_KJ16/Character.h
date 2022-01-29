@@ -1,5 +1,6 @@
 #pragma once
 #include "Direction.h"
+#include "Turn.h"
 struct Character
 {
 	Character() = delete;
@@ -8,4 +9,5 @@ struct Character
 	static int GetY();
 	static Direction GetFacing();
 	static bool IsAlive();
+	static void Turn(::Turn turn);
 };

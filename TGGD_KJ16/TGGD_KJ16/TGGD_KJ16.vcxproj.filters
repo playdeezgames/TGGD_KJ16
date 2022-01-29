@@ -20,7 +20,7 @@
     <ClCompile Include="MainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ConfirmQuit.cpp">
+    <ClCompile Include="ConfirmMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="InPlay.cpp">
@@ -32,6 +32,9 @@
     <ClCompile Include="Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TurnMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Terminal.h">
@@ -40,7 +43,7 @@
     <ClInclude Include="MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ConfirmQuit.h">
+    <ClInclude Include="ConfirmMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="InPlay.h">
@@ -53,6 +56,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Direction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TurnMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Turn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
