@@ -154,6 +154,7 @@
     <ClCompile Include="RNG.cpp" />
     <ClCompile Include="School.cpp" />
     <ClCompile Include="Prophecies.cpp" />
+    <ClCompile Include="Spiders.cpp" />
     <ClCompile Include="Terminal.cpp" />
     <ClCompile Include="TGGD_KJ16.cpp" />
     <ClCompile Include="TurnMenu.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Prophecies.h" />
     <ClInclude Include="RNG.h" />
     <ClInclude Include="School.h" />
+    <ClInclude Include="Spiders.h" />
     <ClInclude Include="Terminal.h" />
     <ClInclude Include="Turn.h" />
     <ClInclude Include="TurnMenu.h" />
