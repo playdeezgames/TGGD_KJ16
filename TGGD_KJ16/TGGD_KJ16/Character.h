@@ -12,4 +12,5 @@ struct Character
 	static bool IsAlive();
 	static void Turn(Turn turn);
 	static void Move(Move move);
+	static void Die();
 };

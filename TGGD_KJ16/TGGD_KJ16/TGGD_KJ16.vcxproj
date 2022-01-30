@@ -146,13 +146,14 @@
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="ConfirmMenu.cpp" />
+    <ClCompile Include="FulfillMenu.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="InPlay.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="MoveMenu.cpp" />
     <ClCompile Include="RNG.cpp" />
     <ClCompile Include="School.cpp" />
-    <ClCompile Include="Prophesies.cpp" />
+    <ClCompile Include="Prophecies.cpp" />
     <ClCompile Include="Terminal.cpp" />
     <ClCompile Include="TGGD_KJ16.cpp" />
     <ClCompile Include="TurnMenu.cpp" />
@@ -161,12 +162,13 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="ConfirmMenu.h" />
     <ClInclude Include="Direction.h" />
+    <ClInclude Include="FulfillMenu.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="InPlay.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="MoveMenu.h" />
-    <ClInclude Include="Prophesies.h" />
+    <ClInclude Include="Prophecies.h" />
     <ClInclude Include="RNG.h" />
     <ClInclude Include="School.h" />
     <ClInclude Include="Terminal.h" />

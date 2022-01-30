@@ -1,9 +1,9 @@
 #pragma once
 #include <optional>
 #include <string>
-struct Prophesies
+struct Prophecies
 {
-	Prophesies() = delete;
+	Prophecies() = delete;
 	static void Start();
 	static std::optional<size_t> GetProphesy(int x, int y);
 	static bool IsFulfilled(size_t index);

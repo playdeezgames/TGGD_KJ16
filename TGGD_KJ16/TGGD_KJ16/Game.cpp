@@ -1,10 +1,10 @@
 #include "Game.h"
 #include "Character.h"
 #include "School.h"
-#include "Prophesies.h"
+#include "Prophecies.h"
 void Game::Start()
 {
 	School::Start();
-	Prophesies::Start();
+	Prophecies::Start();
 	Character::Start();
 }

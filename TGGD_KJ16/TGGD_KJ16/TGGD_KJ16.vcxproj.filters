@@ -44,7 +44,10 @@
     <ClCompile Include="School.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Prophesies.cpp">
+    <ClCompile Include="Prophecies.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FulfillMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -88,7 +91,10 @@
     <ClInclude Include="RNG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Prophesies.h">
+    <ClInclude Include="Prophecies.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FulfillMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

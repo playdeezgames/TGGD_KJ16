@@ -6,19 +6,20 @@
 #include "TurnMenu.h"
 #include "MoveMenu.h"
 #include "School.h"
-#include "Prophesies.h"
+#include "Prophecies.h"
+#include "FulfillMenu.h"
 void InPlay::Run()
 {
-	while (Character::IsAlive())
+	while (Character::IsAlive() && !Prophecies::AreAllFulfilled())
 	{
 		Terminal::WriteLine();
-		auto prophesyIndex = Prophesies::GetProphesy(Character::GetX(), Character::GetY());
+		auto prophesyIndex = Prophecies::GetProphesy(Character::GetX(), Character::GetY());
 		if (School::IsInside(Character::GetX(), Character::GetY()))
 		{
 			Terminal::WriteLine("You are inside the school.");
-			if (prophesyIndex && !Prophesies::IsFulfilled(*prophesyIndex))
+			if (prophesyIndex && !Prophecies::IsFulfilled(*prophesyIndex))
 			{
-				Terminal::WriteLine("There is an unfulfilled prophesy here.");
+				Terminal::WriteLine("There is an unfulfilled prophecy here.");
 			}
 		}
 		else
@@ -57,6 +58,10 @@ void InPlay::Run()
 		}
 		Terminal::WriteLine("1) Turn");
 		Terminal::WriteLine("2) Move");
+		if (prophesyIndex.has_value() && !Prophecies::IsFulfilled(*prophesyIndex))
+		{
+			Terminal::WriteLine("3) Attempt to fulfill prophecy!");
+		}
 		Terminal::WriteLine("0) Abandon Game");
 		auto input = Terminal::ReadLine();
 		if (input == "0")
@@ -74,10 +79,24 @@ void InPlay::Run()
 		{
 			MoveMenu::Run();
 		}
+		else if (input == "3" && prophesyIndex.has_value() && !Prophecies::IsFulfilled(*prophesyIndex))
+		{
+			FulfillMenu::Run(*prophesyIndex);
+		}
 		else
 		{
 			Terminal::WriteLine();
 			Terminal::WriteLine("Invalid input.");
 		}
+	}
+	if (Prophecies::AreAllFulfilled())
+	{
+		Terminal::WriteLine();
+		Terminal::WriteLine("You have fulfilled all of the prophesies, and have proven yerself to truly be the chosen one!");
+	}
+	else if (!Character::IsAlive())
+	{
+		Terminal::WriteLine();
+		Terminal::WriteLine("Yer dead. Game over.");
 	}
 }

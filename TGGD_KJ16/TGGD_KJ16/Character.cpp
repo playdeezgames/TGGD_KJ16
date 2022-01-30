@@ -6,9 +6,11 @@
 static Direction characterFacing{};
 static int characterX{};
 static int characterY{};
+static bool characterAlive{};
 
 void Character::Start()
 {
+	characterAlive = true;
 	switch (RNG::FromRange(1, 5))
 	{
 	case 1:
@@ -49,7 +51,7 @@ Direction Character::GetFacing()
 
 bool Character::IsAlive()
 {
-	return true;
+	return characterAlive;
 }
 
 static constexpr void TurnAround()
@@ -121,4 +123,9 @@ void Character::Move(::Move move)
 	characterFacing = oldFacing;
 	characterX += deltaX;
 	characterY += deltaY;
+}
+
+void Character::Die()
+{
+	characterAlive = false;
 }

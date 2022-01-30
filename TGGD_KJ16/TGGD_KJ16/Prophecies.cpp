@@ -1,4 +1,4 @@
-#include "Prophesies.h"
+#include "Prophecies.h"
 #include <string>
 #include <vector>
 #include "RNG.h"
@@ -7,9 +7,9 @@
 #include <format>
 static constexpr size_t PROPHESY_COUNT = 7;
 
-struct Prophesy
+struct Prophecy
 {
-	Prophesy(int x, int y, const std::string question, const std::string answer, bool fulfilled)
+	Prophecy(int x, int y, const std::string question, const std::string answer, bool fulfilled)
 		: x(x)
 		, y(y)
 		, question(question)
@@ -25,9 +25,9 @@ struct Prophesy
 	bool fulfilled;
 };
 
-static std::vector<Prophesy> prophesies;
+static std::vector<Prophecy> prophesies;
 
-void Prophesies::Start()
+void Prophecies::Start()
 {
 	prophesies.clear();
 	while (prophesies.size() < PROPHESY_COUNT)
@@ -37,9 +37,9 @@ void Prophesies::Start()
 		if (std::find_if(
 			prophesies.begin(), 
 			prophesies.end(), 
-			[x,y](const auto& prophesy) 
+			[x,y](const auto& prophecy) 
 			{
-				return prophesy.x == x && prophesy.y == y;
+				return prophecy.x == x && prophecy.y == y;
 			}) == prophesies.end())
 		{
 			auto first = RNG::FromRange(1000, 10000);
@@ -49,14 +49,14 @@ void Prophesies::Start()
 	}
 }
 
-std::optional<size_t> Prophesies::GetProphesy(int x, int y)
+std::optional<size_t> Prophecies::GetProphesy(int x, int y)
 {
 	auto iter = std::find_if(
 		prophesies.begin(), 
 		prophesies.end(), 
-		[x,y](const auto& prophesy) 
+		[x,y](const auto& prophecy) 
 		{
-			return prophesy.x == x && prophesy.y == y;
+			return prophecy.x == x && prophecy.y == y;
 		});
 	if (iter != prophesies.end())
 	{
@@ -65,33 +65,33 @@ std::optional<size_t> Prophesies::GetProphesy(int x, int y)
 	return std::nullopt;
 }
 
-bool Prophesies::IsFulfilled(size_t index)
+bool Prophecies::IsFulfilled(size_t index)
 {
 	return prophesies.at(index).fulfilled;
 }
 
-void Prophesies::Fulfill(size_t index)
+void Prophecies::Fulfill(size_t index)
 {
 	prophesies.at(index).fulfilled = true;
 }
 
-bool Prophesies::AreAllFulfilled()
+bool Prophecies::AreAllFulfilled()
 {
 	return std::all_of(
 		prophesies.begin(), 
 		prophesies.end(), 
-		[](const auto& prophesy) 
+		[](const auto& prophecy) 
 		{
-			return prophesy.fulfilled;
+			return prophecy.fulfilled;
 		});
 }
 
-std::string Prophesies::GetQuestion(size_t index)
+std::string Prophecies::GetQuestion(size_t index)
 {
 	return prophesies.at(index).question;
 }
 
-std::string Prophesies::GetAnswer(size_t index)
+std::string Prophecies::GetAnswer(size_t index)
 {
 	return prophesies.at(index).answer;
 }
