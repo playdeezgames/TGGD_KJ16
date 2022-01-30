@@ -8,15 +8,29 @@
 #include "School.h"
 #include "Prophecies.h"
 #include "FulfillMenu.h"
+#include "Spiders.h"
 void InPlay::Run()
 {
 	while (Character::IsAlive() && !Prophecies::AreAllFulfilled())
 	{
 		Terminal::WriteLine();
-		auto prophesyIndex = Prophecies::GetProphesy(Character::GetX(), Character::GetY());
-		if (School::IsInside(Character::GetX(), Character::GetY()))
+		int x = Character::GetX();
+		int y = Character::GetY();
+		auto prophesyIndex = Prophecies::GetProphesy(x,y);
+		if (School::IsInside(x,y))
 		{
 			Terminal::WriteLine("You are inside the school.");
+			if (Spiders::Exists(x, y))
+			{
+				if (Spiders::IsAlive(x, y))
+				{
+					Terminal::WriteLine("There is a spider here! Kill it, quick!");
+				}
+				else
+				{
+					Terminal::WriteLine("There is a smushed spider here.");
+				}
+			}
 			if (prophesyIndex && !Prophecies::IsFulfilled(*prophesyIndex))
 			{
 				Terminal::WriteLine("There is an unfulfilled prophecy here.");
@@ -62,6 +76,10 @@ void InPlay::Run()
 		{
 			Terminal::WriteLine("3) Attempt to fulfill prophecy!");
 		}
+		if (Spiders::IsAlive(x, y))
+		{
+			Terminal::WriteLine("4) Smush spider.");
+		}
 		Terminal::WriteLine("0) Abandon Game");
 		auto input = Terminal::ReadLine();
 		if (input == "0")
@@ -82,6 +100,12 @@ void InPlay::Run()
 		else if (input == "3" && prophesyIndex.has_value() && !Prophecies::IsFulfilled(*prophesyIndex))
 		{
 			FulfillMenu::Run(*prophesyIndex);
+		}
+		else if (input == "4" && Spiders::IsAlive(x, y))
+		{
+			Terminal::WriteLine();
+			Terminal::WriteLine("You smush the spider. My hero!");
+			Spiders::Kill(x, y);
 		}
 		else
 		{
